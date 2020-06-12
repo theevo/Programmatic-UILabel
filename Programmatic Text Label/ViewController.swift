@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var label: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,7 @@ class ViewController: UIViewController {
         var center = view.center
         center.x = center.x + xOffset
         
-        let label = UILabel(frame: CGRect(origin: center, size: CGSize(width: width, height: height)))
+        label = UILabel(frame: CGRect(origin: center, size: CGSize(width: width, height: height)))
         label.font = UIFont(descriptor: UIFontDescriptor(name: "Courier", size: CGFloat(integerLiteral: 15)), size: CGFloat(integerLiteral: 15))
         label.text = "Hello world"
         label.layer.borderColor = UIColor.systemPink.cgColor
@@ -34,7 +36,8 @@ class ViewController: UIViewController {
     }
     
     @objc func buhBye() {
-        print("buh bye")
+        label.removeFromSuperview()
+        label = nil
     }
 
 
