@@ -46,8 +46,7 @@ class ViewController: UIViewController {
     }
     
     @objc func buhBye() {
-        guard let label = helloLabel else { return }
-        label.removeFromSuperview()
+        helloLabel?.removeFromSuperview()
         helloLabel = nil
     }
     
